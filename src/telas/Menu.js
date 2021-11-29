@@ -3,8 +3,8 @@ import { Text, TouchableOpacity, StyleSheet, View, FlatList,Alert } from 'react-
 import Lista from '../components/List/AddList';
 import api from '../services/api';
 import Header from '../components/header/index'
-import { Box, Container, Label, DeleteButtons} from "../assets/Styles/styles"
-import { FaRegTrashAlt } from "react-icons/fa";
+import { Box, Container, Label} from "../assets/Styles/styles"
+import DeleteButton from '../components/button/deletebutton'
 
 export default function Menu() {
     const [todos, setTodos] = useState([]);
@@ -64,7 +64,7 @@ export default function Menu() {
                 <Box>
                   <Text>{item.name}</Text>
                   <Text>R${item.price}</Text>
-                  <DeleteButtons onPress={() => deleteSpending(item?._id)} text='a'></DeleteButtons>
+                  <DeleteButton onPress={() => deleteSpending(item?._id)}></DeleteButton>
               </Box>
               )}  
             />
